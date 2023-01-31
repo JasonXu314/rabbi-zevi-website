@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Book from 'src/lib/components/Book.svelte';
 	import { pageTitle } from 'src/lib/stores';
 	import { books } from './books';
@@ -43,6 +43,16 @@
 
 		&:not(:first-of-type) {
 			margin-top: 2rem;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.book-entry {
+			grid-template-areas:
+				'preview'
+				'title'
+				'desc';
+			gap: 1rem 0;
 		}
 	}
 </style>
