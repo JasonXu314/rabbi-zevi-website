@@ -205,4 +205,10 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: 403px) {
+		.content {
+			margin: 0 10%;
+		}
+	}
 </style>
