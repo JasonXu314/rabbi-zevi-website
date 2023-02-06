@@ -26,19 +26,20 @@
 			'preview title'
 			'preview desc'
 			'preview .';
-		gap: 1rem 2rem;
+		gap: 0.5rem 2rem;
+		grid-template-columns: 1fr 1.5fr;
 
 		.book-title {
 			grid-area: title;
-			font-size: 2rem;
+			font-size: 1.5rem;
 			margin: 0;
-			color: #444340;
+			color: #646360;
 		}
 
 		.book-description {
 			grid-area: desc;
-			font-size: 1.5rem;
-			color: #444340;
+			font-size: 1.25rem;
+			color: #646360;
 		}
 
 		&:not(:first-of-type) {
@@ -46,7 +47,7 @@
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 1000px) {
 		.book-entry {
 			grid-template-areas:
 				'preview'
