@@ -55,6 +55,14 @@
 				'desc';
 			gap: 1rem 0;
 			grid-template-columns: auto;
+
+			.book-title {
+				font-size: 2.25rem;
+			}
+
+			.book-description {
+				font-size: 1.75rem;
+			}
 		}
 	}
 </style>
