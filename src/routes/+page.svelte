@@ -54,6 +54,7 @@
 				'title'
 				'desc';
 			gap: 1rem 0;
+			grid-template-columns: auto;
 		}
 	}
 </style>
