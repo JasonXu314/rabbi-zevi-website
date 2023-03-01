@@ -6,10 +6,6 @@
 	pageTitle.set('Meaningful Books');
 </script>
 
-<svelte:head>
-	<title>Meaningful Books</title>
-</svelte:head>
-
 {#each books as { title, src } (src)}
 	<div class="book-entry">
 		<Book {title} {src} />

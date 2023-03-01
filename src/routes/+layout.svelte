@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { SvelteUIProvider } from '@svelteuidev/core';
 	import { pageTitle } from 'src/lib/stores';
 	import { onDestroy, onMount } from 'svelte';
 
@@ -32,31 +33,52 @@
 	}
 </script>
 
-<main class="content">
-	{#if $pageTitle !== null}
-		<h1 class="title">{$pageTitle}</h1>
-	{/if}
-	<nav class="nav">
-		{#if smol}
-			<div class="hamburger" class:open={navOpen}>
-				<svg class="icon" viewBox="0 0 1024 1024" on:click={toggleNav} on:keyup={(evt) => evt}>
-					<title>Menu</title>
-					<path
-						fill="white"
-						class="path1"
-						d="M896 307.2h-768c-14.138 0-25.6-11.462-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.462 25.6 25.6s-11.461 25.6-25.6 25.6z"
-					/>
-					<path
-						fill="white"
-						class="path2"
-						d="M896 563.2h-768c-14.138 0-25.6-11.461-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.461 25.6 25.6s-11.461 25.6-25.6 25.6z"
-					/>
-					<path
-						fill="white"
-						class="path3"
-						d="M896 819.2h-768c-14.138 0-25.6-11.461-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.461 25.6 25.6s-11.461 25.6-25.6 25.6z"
-					/>
-				</svg>
+<svelte:head>
+	<title>{$pageTitle}</title>
+</svelte:head>
+<SvelteUIProvider withNormalizeCSS>
+	<main class="content">
+		{#if $pageTitle !== null}
+			<h1 class="title">{$pageTitle}</h1>
+		{/if}
+		<nav class="nav">
+			{#if smol}
+				<div class="hamburger" class:open={navOpen}>
+					<svg class="icon" viewBox="0 0 1024 1024" on:click={toggleNav} on:keyup={(evt) => evt}>
+						<title>Menu</title>
+						<path
+							fill="white"
+							class="path1"
+							d="M896 307.2h-768c-14.138 0-25.6-11.462-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.462 25.6 25.6s-11.461 25.6-25.6 25.6z"
+						/>
+						<path
+							fill="white"
+							class="path2"
+							d="M896 563.2h-768c-14.138 0-25.6-11.461-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.461 25.6 25.6s-11.461 25.6-25.6 25.6z"
+						/>
+						<path
+							fill="white"
+							class="path3"
+							d="M896 819.2h-768c-14.138 0-25.6-11.461-25.6-25.6s11.462-25.6 25.6-25.6h768c14.139 0 25.6 11.461 25.6 25.6s-11.461 25.6-25.6 25.6z"
+						/>
+					</svg>
+					<ul class="links">
+						<li class="link">
+							<a href="/" class="link-text">Home</a>
+						</li>
+						<li class="link">
+							<a href="/about" class="link-text">About Us</a>
+						</li>
+						<li class="link">
+							<a href="/contact" class="link-text">Contact Us</a>
+						</li>
+						<li class="link">
+							<a href="/courses" class="link-text">Kabbalah/Life Courses</a>
+						</li>
+					</ul>
+				</div>
+				<button class="donate-button">Donate!</button>
+			{:else}
 				<ul class="links">
 					<li class="link">
 						<a href="/" class="link-text">Home</a>
@@ -70,31 +92,15 @@
 					<li class="link">
 						<a href="/courses" class="link-text">Kabbalah/Life Courses</a>
 					</li>
+					<li class="link donate">
+						<button class="link-text">Donate!</button>
+					</li>
 				</ul>
-			</div>
-			<button class="donate-button">Donate!</button>
-		{:else}
-			<ul class="links">
-				<li class="link">
-					<a href="/" class="link-text">Home</a>
-				</li>
-				<li class="link">
-					<a href="/about" class="link-text">About Us</a>
-				</li>
-				<li class="link">
-					<a href="/contact" class="link-text">Contact Us</a>
-				</li>
-				<li class="link">
-					<a href="/courses" class="link-text">Kabbalah/Life Courses</a>
-				</li>
-				<li class="link donate">
-					<button class="link-text">Donate!</button>
-				</li>
-			</ul>
-		{/if}
-	</nav>
-	<slot />
-</main>
+			{/if}
+		</nav>
+		<slot />
+	</main>
+</SvelteUIProvider>
 
 <style lang="scss">
 	.content {
