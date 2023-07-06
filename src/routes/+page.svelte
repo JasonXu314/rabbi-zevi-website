@@ -6,11 +6,17 @@
 	pageTitle.set('Meaningful Books');
 </script>
 
-{#each books as { title, src } (src)}
+{#each books as { title, src, description } (src)}
 	<div class="book-entry">
 		<Book {title} {src} />
 		<h2 class="book-title">{title}</h2>
-		<p class="book-description">description here</p>
+		<div class="book-description">
+			{#each description.split('\n') as chunk}
+				<p>
+					{chunk}
+				</p>
+			{/each}
+		</div>
 	</div>
 {/each}
 
@@ -34,8 +40,12 @@
 
 		.book-description {
 			grid-area: desc;
-			font-size: 1.25rem;
-			color: #646360;
+
+			p {
+				font-size: 1.15rem;
+				text-indent: 2em;
+				color: #646360;
+			}
 		}
 
 		&:not(:first-of-type) {
