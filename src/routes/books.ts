@@ -59,7 +59,7 @@ export const books: Book[] = [
 	},
 	{
 		title: 'Meditations From The Tanya: The Practical Advice and Meditations Collected From Tanya',
-		src: 'https://read.amazon.com/kp/card?asin=B08G1TF2T8&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_450FT2HX6B0DWACCT3DX',
+		src: 'https://read.amazon.com/kp/card?asin=B083F99RVM&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_YB4PHRD1Z1EKZYJMAGDD',
 		description: `For centuries Jews have gained a deep faith - in fact - trust (whereas the former may include worry, the latter precludes...) in G-d's personal protection, from Rabbi Bechaya's Classic "The Gateway To Trusting God."`
 	},
 	{
