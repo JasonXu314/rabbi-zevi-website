@@ -10,7 +10,7 @@
 </script>
 
 <h1>We love hearing from our readers.</h1>
-<Stack justify="left" style="width: 80%">
+<Stack justify="left" style="width: 80%; z-index: 1;">
 	<TextInput label="Name" bind:value={name} />
 	<TextInput label="Email" bind:value={email} />
 	<TextInput label="Message" bind:value={message} />

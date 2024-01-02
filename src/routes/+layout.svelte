@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
 	import { SvelteUIProvider } from '@svelteuidev/core';
 	import { pageTitle } from 'src/lib/stores';
 	import { onDestroy, onMount } from 'svelte';
@@ -27,6 +28,8 @@
 			window.removeEventListener('resize', listener);
 		}
 	});
+
+	afterNavigate(() => (navOpen = false));
 
 	function toggleNav() {
 		navOpen = !navOpen;
@@ -110,6 +113,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		z-index: 0;
 
 		.title {
 			font-size: 4rem;
@@ -121,6 +125,7 @@
 			background-color: #15b6b8;
 			width: 100%;
 			margin-bottom: 2.5rem;
+			z-index: 10;
 
 			.links {
 				display: flex;
