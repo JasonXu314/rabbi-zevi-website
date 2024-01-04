@@ -8,7 +8,7 @@
 		navOpen: boolean = false;
 
 	const listener = () => {
-		if (window.innerWidth < 404) {
+		if (window.innerWidth < 590) {
 			smol = true;
 		} else {
 			smol = false;
@@ -18,7 +18,7 @@
 	onMount(() => {
 		window.addEventListener('resize', listener);
 
-		if (window.innerWidth < 404) {
+		if (window.innerWidth < 590) {
 			smol = true;
 		}
 	});
@@ -110,10 +110,12 @@
 		background-color: white;
 		margin: 0 20%;
 		min-height: 100vh;
+		width: 60%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		z-index: 0;
+		position: relative;
 
 		.title {
 			font-size: 4rem;
@@ -165,7 +167,7 @@
 			}
 		}
 
-		@media screen and (max-width: 403px) {
+		@media screen and (max-width: 589px) {
 			.nav {
 				display: flex;
 				flex-direction: row;
@@ -217,9 +219,10 @@
 		}
 	}
 
-	@media screen and (max-width: 403px) {
+	@media screen and (max-width: 589px) {
 		.content {
 			margin: 0 10%;
+			width: 80%;
 		}
 	}
 </style>
