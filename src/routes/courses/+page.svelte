@@ -5,7 +5,7 @@
 
 	pageTitle.set('Life-Guide “Kabbalah Love”');
 
-	$: width = fullWidth * 0.9;
+	$: width = Math.min(560, fullWidth * 0.9);
 	$: height = (width * 315) / 560;
 
 	const videos = [
