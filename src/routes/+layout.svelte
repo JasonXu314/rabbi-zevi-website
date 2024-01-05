@@ -96,7 +96,7 @@
 						<a href="/courses" class="link-text">Kabbalah/Life Courses</a>
 					</li>
 					<li class="link donate">
-						<button class="link-text">Donate!</button>
+						<a href="/donate" class="link-text">Donate!</a>
 					</li>
 				</ul>
 			{/if}
@@ -153,7 +153,7 @@
 						.link-text {
 							border: none;
 							background-color: #15b6b8;
-							display: inline;
+							display: block;
 							cursor: pointer;
 						}
 					}
