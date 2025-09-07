@@ -144,6 +144,11 @@
 						transition: opacity 0.2s ease;
 						font-size: 1.25rem;
 						padding: 0.75rem 1rem;
+
+						@media screen and (min-width: 590px) and (max-width: 807px) {
+							font-size: 0.8rem;
+							padding: 0.75rem 0.5rem;
+						}
 					}
 
 					&.donate {
